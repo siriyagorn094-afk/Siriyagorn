@@ -105,11 +105,13 @@
             <div class="relative group">
                 <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-tr from-pastel-rose via-pastel-pink to-pastel-yellow p-1.5 shadow-md group-hover:scale-105 transition-transform duration-300">
                     <div class="w-full h-full rounded-full bg-white flex flex-col items-center justify-center overflow-hidden border-4 border-white relative">
-                        <!-- Cute Placeholder Avatar -->
-                        <div class="w-full h-full bg-pastel-cream flex flex-col items-center justify-center text-pastel-deepPink">
-                            <i class="fa-solid fa-face-smile-wink text-6xl mb-1"></i>
-                            <span class="font-cute text-xs text-pastel-textSecondary">รูปโปรไฟล์</span>
-                        </div>
+                        <!-- Profile Image with fallback onerror handler -->
+                        <img 
+                            src="https://raw.githubusercontent.com/siriyagorn094-afk/Siriyagorn/main/IMG_4022.JPG" 
+                            alt="สิริยากร นะสา (เทนนิส)" 
+                            class="w-full h-full object-cover rounded-full"
+                            onerror="this.onerror=null; this.src='https://placehold.co/400x400/FFC2D1/4A3E3D?text=Tennis';"
+                        />
                     </div>
                 </div>
                 <div class="absolute -bottom-2 right-2 bg-pastel-yellow px-3 py-1 rounded-full text-xs font-cute font-bold shadow border border-amber-200 flex items-center gap-1">
