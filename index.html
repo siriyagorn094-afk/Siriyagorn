@@ -1,356 +1,378 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennis - Siriyagorn Nasa | Portfolio</title>
-    <!-- Tailwind CSS -->
+    <title>Portfolio - สิริยากร นะสา (Siriyakorn Nasa)</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Mali (Cute Handwriting) & Prompt (Clean Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Mali', 'cursive', 'sans-serif'],
+                        heading: ['Itim', 'cursive', 'sans-serif']
+                    },
                     colors: {
                         pastel: {
-                            pink: '#FFE5EC',
-                            rose: '#FFC2D1',
-                            deepPink: '#FF8FAB',
-                            cream: '#FFF0F5',
-                            mint: '#E8F5E9',
-                            yellow: '#FFF9C4',
-                            purple: '#F3E5F5',
-                            textPrimary: '#4A3E3D',
-                            textSecondary: '#7A6B69'
+                            pink: '#FDE2E4',
+                            lightpink: '#FFEBEE',
+                            green: '#E2F0CB',
+                            mint: '#D4A373',
+                            softgreen: '#80B918',
+                            yellow: '#FFF1C5',
+                            purple: '#E8AEB7',
+                            cream: '#FAEDCD',
+                            text: '#4A4E69'
                         }
-                    },
-                    fontFamily: {
-                        cute: ['Mali', 'cursive'],
-                        sans: ['Prompt', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 8px 30px rgba(255, 182, 193, 0.3)',
-                        'cute': '0 4px 15px rgba(255, 143, 171, 0.2)',
                     }
                 }
             }
         }
     </script>
+
     <style>
         body {
-            font-family: 'Prompt', sans-serif;
-            background-color: #FFF9FA;
-            color: #4A3E3D;
-            background-image: radial-gradient(#FFC2D1 0.75px, transparent 0.75px), radial-gradient(#FFC2D1 0.75px, #FFF9FA 0.75px);
-            background-size: 30px 30px;
-            background-position: 0 0, 15px 15px;
+            font-family: 'Mali', cursive, sans-serif;
+            color: #4A4E69;
+            background-color: #FEFAE0;
         }
-        .font-cute {
-            font-family: 'Mali', cursive;
+        h1, h2, h3, .font-heading {
+            font-family: 'Itim', cursive, sans-serif;
         }
-        .cute-border {
-            border: 2px dashed #FF8FAB;
+        .cute-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 3px solid #FFF;
+            box-shadow: 0 10px 25px -5px rgba(186, 215, 233, 0.4);
+            border-radius: 2rem;
         }
-        /* Toast style for notifications */
-        #toast {
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-            opacity: 0;
-            transform: translateY(20px);
+        .cute-badge {
+            background-color: #E2F0CB;
+            color: #386641;
+            border-radius: 9999px;
+            padding: 0.25rem 1rem;
+            font-weight: 600;
         }
-        #toast.show {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(0);
+        .blob {
+            border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+            animation: morph 8s ease-in-out infinite;
+        }
+        @keyframes morph {
+            0%, 100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
+            50% { border-radius: 65% 35% 38% 62% / 55% 48% 52% 45%; }
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-pastel-rose selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-pink-200">
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-pastel-rose/30">
-        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-cute text-2xl font-bold text-pastel-deepPink flex items-center gap-2 hover:scale-105 transition-transform">
-                <i class="fa-solid fa-heart text-pastel-deepPink"></i>
-                <span>Tennis.Portfolio</span>
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 border-b border-pink-100">
+        <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold font-heading text-emerald-600 flex items-center gap-2">
+                <span>🌱</span> Siriyakorn.N
             </a>
-            <nav class="hidden md:flex items-center space-x-6 font-cute font-medium text-pastel-textSecondary">
-                <a href="#about" class="hover:text-pastel-deepPink transition-colors">เกี่ยวกับฉัน</a>
-                <a href="#details" class="hover:text-pastel-deepPink transition-colors">ข้อมูลส่วนตัว</a>
-                <a href="#family" class="hover:text-pastel-deepPink transition-colors">ครอบครัว</a>
-                <a href="#contact" class="hover:text-pastel-deepPink transition-colors">ติดต่อ</a>
-            </nav>
-            <button onclick="window.print()" class="font-cute bg-pastel-rose hover:bg-pastel-deepPink text-white px-4 py-2 rounded-full text-sm shadow-sm hover:shadow-cute transition-all flex items-center gap-2">
-                <i class="fa-solid fa-print"></i>
-                <span>พิมพ์ / PDF</span>
-            </button>
-        </div>
+            <div class="hidden md:flex gap-6 text-base font-medium">
+                <a href="#about" class="hover:text-emerald-600 transition-colors">ประวัติส่วนตัว</a>
+                <a href="#education" class="hover:text-emerald-600 transition-colors">ประวัติการศึกษา</a>
+                <a href="#skills" class="hover:text-emerald-600 transition-colors">ความสามารถพิเศษ</a>
+                <a href="#activities" class="hover:text-emerald-600 transition-colors">ผลงาน/กิจกรรม</a>
+            </div>
+            <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-full shadow-md hover:shadow-lg transition-all text-sm font-semibold">
+                ติดต่อฉัน
+            </a>
+        </nav>
     </header>
 
-    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow space-y-8">
-        
-        <!-- Hero Banner Section -->
-        <section id="about" class="bg-white rounded-3xl p-6 md:p-10 shadow-soft border border-pastel-pink relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center gap-8">
-            <!-- Decorative Elements -->
-            <div class="absolute -top-6 -right-6 w-24 h-24 bg-pastel-pink rounded-full blur-xl opacity-70"></div>
-            <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-pastel-yellow rounded-full blur-xl opacity-70"></div>
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-16">
 
-            <!-- Profile Image Container -->
-            <div class="relative group">
-                <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-tr from-pastel-rose via-pastel-pink to-pastel-yellow p-1.5 shadow-md group-hover:scale-105 transition-transform duration-300">
-                    <div class="w-full h-full rounded-full bg-white flex flex-col items-center justify-center overflow-hidden border-4 border-white relative">
-                        <!-- Profile Image with fallback onerror handler -->
-                        <img 
-                            src="https://raw.githubusercontent.com/siriyagorn094-afk/Siriyagorn/main/IMG_4022.JPG" 
-                            alt="สิริยากร นะสา (เทนนิส)" 
-                            class="w-full h-full object-cover rounded-full"
-                            onerror="this.onerror=null; this.src='https://placehold.co/400x400/FFC2D1/4A3E3D?text=Tennis';"
-                        />
-                    </div>
-                </div>
-                <div class="absolute -bottom-2 right-2 bg-pastel-yellow px-3 py-1 rounded-full text-xs font-cute font-bold shadow border border-amber-200 flex items-center gap-1">
-                    <span>✨</span> โสด
-                </div>
-            </div>
-
-            <!-- Profile Info Header -->
-            <div class="space-y-3 z-10 flex-1">
-                <div class="inline-block bg-pastel-pink text-pastel-deepPink font-cute text-sm px-3 py-1 rounded-full font-semibold mb-1">
-                    🎀 ยินดีต้อนรับสู่พอร์ตโฟลิโอของฉัน
-                </div>
-                <h1 class="text-3xl md:text-4xl font-bold font-cute text-pastel-textPrimary">
-                    นางสาวสิริยากร นะสา
+        <section class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 py-10">
+            <div class="flex-1 space-y-4 text-center md:text-left">
+                <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm">
+                    ✨ แฟ้มสะสมผลงาน (Portfolio 2569)
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                    สวัสดีค่ะ 👋<br>
+                    <span class="text-emerald-600">นางสาว สิริยากร นะสา</span>
                 </h1>
-                <p class="text-lg text-pastel-deepPink font-cute font-medium">
-                    ชื่อเล่น : น้องเทนนิส 🎾
+                <p class="text-lg text-gray-600 leading-relaxed max-w-lg">
+                    นักเรียนสายวิทยาศาสตร์-คณิตศาสตร์ โรงเรียนหนองเรือวิทยา 
+                    มุ่งมั่นเข้าศึกษาต่อระดับอุดมศึกษาที่ วิทยาลัยการสาธารณสุขสิรินธร สถาบันพระบรมราชชนก 💖
                 </p>
-                <p class="text-pastel-textSecondary text-sm md:text-base leading-relaxed">
-                    สวัสดีค่ะ! ยินดีที่ได้รู้จักทุกคนนะคะ หน้าเว็บนี้จัดทำขึ้นเพื่อรวบรวมข้อมูลประวัติส่วนตัวและช่องทางติดต่อของเทนนิสค่ะ
-                </p>
-                
-                <!-- Quick Info Chips -->
-                <div class="pt-2 flex flex-wrap gap-2 justify-center md:justify-start font-cute text-xs text-pastel-textPrimary">
-                    <span class="bg-pastel-cream border border-pastel-pink px-3 py-1.5 rounded-2xl flex items-center gap-1.5">
-                        <i class="fa-solid fa-cake-candles text-pastel-deepPink"></i> 18 สิงหาคม 2550
-                    </span>
-                    <span class="bg-pastel-cream border border-pastel-pink px-3 py-1.5 rounded-2xl flex items-center gap-1.5">
-                        <i class="fa-solid fa-flag text-pastel-deepPink"></i> สัญชาติไทย (ไทย)
-                    </span>
-                    <span class="bg-pastel-cream border border-pastel-pink px-3 py-1.5 rounded-2xl flex items-center gap-1.5">
-                        <i class="fa-solid fa-dharmachakra text-pastel-deepPink"></i> ศาสนาพุทธ
-                    </span>
+                <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+                    <a href="#about" class="bg-pink-300 hover:bg-pink-400 text-gray-800 px-6 py-3 rounded-2xl font-semibold shadow-sm transition">
+                        ทำความรู้จักเพิ่มเติม ✨
+                    </a>
+                    <a href="#contact" class="bg-white hover:bg-gray-50 border-2 border-emerald-300 text-emerald-700 px-6 py-3 rounded-2xl font-semibold transition">
+                        ช่องทางติดต่อ 📱
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative w-64 h-64 md:w-80 md:h-80 flex justify-center items-center">
+                <div class="absolute inset-0 bg-emerald-200 blob opacity-70"></div>
+                <div class="absolute inset-2 bg-pink-200 blob opacity-70 animation-delay-2000"></div>
+                <div class="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-xl bg-white flex items-center justify-center">
+                    <!-- Profile Picture from GitHub Raw -->
+                    <img src="https://raw.githubusercontent.com/siriyagorn094-afk/Siriyagorn/main/IMG_4022.JPG" 
+                         alt="นางสาว สิริยากร นะสา" 
+                         class="w-full h-full object-cover object-top"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-center p-4\'><div class=\'w-24 h-24 mx-auto mb-2 rounded-full bg-emerald-100 flex items-center justify-center text-4xl\'>👩‍⚕️</div><p class=\'text-xs text-gray-500 font-sans\'>สิริยากร นะสา</p></div>';">
                 </div>
             </div>
         </section>
 
-        <!-- Detailed Information Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <!-- Personal Details Card -->
-            <section id="details" class="bg-white rounded-3xl p-6 shadow-cute border border-pastel-pink hover:shadow-soft transition-shadow">
-                <div class="flex items-center gap-3 mb-4 pb-2 border-b border-pastel-pink/50">
-                    <div class="w-10 h-10 rounded-2xl bg-pastel-pink flex items-center justify-center text-pastel-deepPink font-bold text-lg">
-                        <i class="fa-solid fa-user-heart"></i>
-                    </div>
-                    <h2 class="font-cute text-xl font-bold text-pastel-textPrimary">ข้อมูลส่วนตัว</h2>
-                </div>
-                
-                <ul class="space-y-3 font-cute text-sm">
-                    <li class="flex justify-between items-center p-2 rounded-xl bg-pastel-cream/50">
-                        <span class="text-pastel-textSecondary"><i class="fa-solid fa-signature text-pastel-deepPink w-6"></i> ชื่อ-นามสกุล:</span>
-                        <span class="font-medium text-pastel-textPrimary">นางสาวสิริยากร นะสา</span>
-                    </li>
-                    <li class="flex justify-between items-center p-2 rounded-xl bg-pastel-cream/50">
-                        <span class="text-pastel-textSecondary"><i class="fa-solid fa-smile text-pastel-deepPink w-6"></i> ชื่อเล่น:</span>
-                        <span class="font-medium text-pastel-textPrimary">เทนนิส</span>
-                    </li>
-                    <li class="flex justify-between items-center p-2 rounded-xl bg-pastel-cream/50">
-                        <span class="text-pastel-textSecondary"><i class="fa-solid fa-calendar-day text-pastel-deepPink w-6"></i> วันเกิด:</span>
-                        <span class="font-medium text-pastel-textPrimary">วันเสาร์ ที่ 18 ส.ค. 2550</span>
-                    </li>
-                    <li class="flex justify-between items-center p-2 rounded-xl bg-pastel-cream/50">
-                        <span class="text-pastel-textSecondary"><i class="fa-solid fa-passport text-pastel-deepPink w-6"></i> สัญชาติ / เชื้อชาติ:</span>
-                        <span class="font-medium text-pastel-textPrimary">ไทย / ไทย</span>
-                    </li>
-                    <li class="flex justify-between items-center p-2 rounded-xl bg-pastel-cream/50">
-                        <span class="text-pastel-textSecondary"><i class="fa-solid fa-hands-praying text-pastel-deepPink w-6"></i> ศาสนา:</span>
-                        <span class="font-medium text-pastel-textPrimary">พุทธ</span>
-                    </li>
-                    <li class="flex justify-between items-center p-2 rounded-xl bg-pastel-cream/50">
-                        <span class="text-pastel-textSecondary"><i class="fa-solid fa-heart text-pastel-deepPink w-6"></i> สถานภาพ:</span>
-                        <span class="font-medium text-pastel-textPrimary">โสด</span>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Family Info Card -->
-            <section id="family" class="bg-white rounded-3xl p-6 shadow-cute border border-pastel-pink hover:shadow-soft transition-shadow flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center gap-3 mb-4 pb-2 border-b border-pastel-pink/50">
-                        <div class="w-10 h-10 rounded-2xl bg-pastel-purple flex items-center justify-center text-purple-400 font-bold text-lg">
-                            <i class="fa-solid fa-house-chimney-window"></i>
-                        </div>
-                        <h2 class="font-cute text-xl font-bold text-pastel-textPrimary">ข้อมูลครอบครัว</h2>
-                    </div>
-
-                    <div class="space-y-3 font-cute text-sm">
-                        <div class="p-3 rounded-2xl bg-pastel-cream border border-pastel-pink/30 flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center">
-                                <i class="fa-solid fa-person"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-pastel-textSecondary">บิดา</p>
-                                <p class="font-semibold text-pastel-textPrimary">นายสามารถ นะสา</p>
-                            </div>
-                        </div>
-
-                        <div class="p-3 rounded-2xl bg-pastel-cream border border-pastel-pink/30 flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-pink-100 text-pink-500 flex items-center justify-center">
-                                <i class="fa-solid fa-person-dress"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-pastel-textSecondary">มารดา</p>
-                                <p class="font-semibold text-pastel-textPrimary">นางอมลวรรณ นะสา</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cute Quote -->
-                <div class="mt-6 p-3 rounded-2xl bg-pastel-yellow/40 border border-pastel-yellow text-center font-cute text-xs text-pastel-textSecondary italic">
-                    🌸 "ครอบครัวคือพลังใจและความอบอุ่นที่สุดของฉัน"
-                </div>
-            </section>
-        </div>
-
-        <!-- Address Section -->
-        <section class="bg-white rounded-3xl p-6 shadow-cute border border-pastel-pink">
-            <div class="flex items-center gap-3 mb-4 pb-2 border-b border-pastel-pink/50">
-                <div class="w-10 h-10 rounded-2xl bg-pastel-mint flex items-center justify-center text-emerald-500 font-bold text-lg">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                </div>
-                <h2 class="font-cute text-xl font-bold text-pastel-textPrimary">ภูมิลำเนา / ที่อยู่ปัจจุบัน</h2>
+        <section id="about" class="scroll-mt-24">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 inline-block relative">
+                    🌷 ข้อมูลส่วนตัว
+                    <span class="block h-2 bg-pink-200 rounded-full mt-1"></span>
+                </h2>
             </div>
-            
-            <div class="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between p-4 bg-pastel-cream/30 rounded-2xl border border-pastel-pink/30">
-                <div class="space-y-1 font-cute">
-                    <p class="text-pastel-textPrimary font-medium leading-relaxed">
-                        <i class="fa-solid fa-house text-pastel-deepPink mr-2"></i>
-                        บ้านเลขที่ 82/2 หมู่ 10 บ้านโพธิ์ตาก 
-                    </p>
-                    <p class="text-pastel-textSecondary text-sm pl-6">
-                        ตำบลบ้านผือ อำเภอหนองเรือ จังหวัดขอนแก่น
-                    </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Personal Data -->
+                <div class="cute-card p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-emerald-700 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-user text-pink-400"></i> ข้อมูลทั่วไป
+                    </h3>
+                    <ul class="space-y-3 text-base">
+                        <li class="flex justify-between border-b border-dashed border-gray-200 pb-1">
+                            <span class="text-gray-500">ชื่อ-นามสกุล:</span>
+                            <span class="font-medium text-gray-800">นางสาว สิริยากร นะสา</span>
+                        </li>
+                        <li class="flex justify-between border-b border-dashed border-gray-200 pb-1">
+                            <span class="text-gray-500">วัน เกิด:</span>
+                            <span class="font-medium text-gray-800">18 สิงหาคม 2550</span>
+                        </li>
+                        <li class="flex justify-between border-b border-dashed border-gray-200 pb-1">
+                            <span class="text-gray-500">เพศ / สัญชาติ / ศาสนา:</span>
+                            <span class="font-medium text-gray-800">หญิง / ไทย / พุทธ</span>
+                        </li>
+                        <li class="flex justify-between border-b border-dashed border-gray-200 pb-1">
+                            <span class="text-gray-500">แผนการเรียน:</span>
+                            <span class="font-medium text-emerald-700">วิทยาศาสตร์-คณิตศาสตร์</span>
+                        </li>
+                    </ul>
                 </div>
-                <button onclick="copyToClipboard('บ้านเลขที่ 82/2 หมู่10 บ้านโพธิ์ตาก ตำบลบ้านผือ อำเภอหนองเรือ จังหวัดขอนแก่น', 'คัดลอกที่อยู่เรียบร้อยแล้ว!')" class="w-full md:w-auto font-cute bg-white hover:bg-pastel-pink text-pastel-deepPink px-4 py-2 rounded-xl border border-pastel-pink text-xs transition-colors flex items-center justify-center gap-2 shadow-sm">
-                    <i class="fa-solid fa-copy"></i>
-                    <span>คัดลอกที่อยู่</span>
-                </button>
+
+                <!-- Family Data -->
+                <div class="cute-card p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-emerald-700 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-house-chimney text-amber-400"></i> ข้อมูลครอบครัว
+                    </h3>
+                    <ul class="space-y-3 text-base">
+                        <li class="bg-emerald-50/50 p-3 rounded-xl">
+                            <p class="text-xs text-emerald-600 font-semibold">บิดา</p>
+                            <p class="font-medium text-gray-800">นายสามารถ นะสา</p>
+                            <p class="text-sm text-gray-500">อาชีพ: รับจ้าง</p>
+                        </li>
+                        <li class="bg-pink-50/50 p-3 rounded-xl">
+                            <p class="text-xs text-pink-600 font-semibold">มารดา</p>
+                            <p class="font-medium text-gray-800">นางอมลวรรณ นะสา</p>
+                            <p class="text-sm text-gray-500">อาชีพ: แม่บ้าน</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="bg-white rounded-3xl p-6 md:p-8 shadow-soft border border-pastel-pink text-center space-y-6">
-            <div class="inline-block p-3 rounded-full bg-pastel-pink/50 text-pastel-deepPink text-2xl mb-1">
-                <i class="fa-solid fa-paper-plane"></i>
-            </div>
-            <div>
-                <h2 class="font-cute text-2xl font-bold text-pastel-textPrimary">ช่องทางการติดต่อ</h2>
-                <p class="font-cute text-sm text-pastel-textSecondary mt-1">สามารถติดต่อเทนนิสได้ทางช่องทางด้านล่างนี้เลยค่ะ</p>
+        <section id="education" class="scroll-mt-24">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 inline-block relative">
+                    🎓 ประวัติการศึกษา
+                    <span class="block h-2 bg-emerald-200 rounded-full mt-1"></span>
+                </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-                <!-- Phone Button -->
-                <div class="p-4 rounded-2xl bg-pastel-cream border border-pastel-pink flex items-center justify-between hover:scale-102 transition-transform">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-phone"></i>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Primary School -->
+                <div class="cute-card p-5 text-center flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                    <div>
+                        <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-amber-100 flex items-center justify-center text-2xl">
+                            🏫
                         </div>
+                        <span class="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full">ประถมศึกษา</span>
+                        <h3 class="text-lg font-bold text-gray-800 mt-2">โรงเรียนโพธิ์ตากวิทยา</h3>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100">
+                        <p class="text-xs text-gray-500">ผลการเรียนเฉลี่ย</p>
+                        <p class="text-xl font-bold text-emerald-600">GPAX: 4.00</p>
+                    </div>
+                </div>
+
+                <!-- Junior High School -->
+                <div class="cute-card p-5 text-center flex flex-col justify-between hover:-translate-y-1 transition duration-300">
+                    <div>
+                        <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-blue-100 flex items-center justify-center text-2xl">
+                            📚
+                        </div>
+                        <span class="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full">มัธยมศึกษาตอนต้น</span>
+                        <h3 class="text-lg font-bold text-gray-800 mt-2">โรงเรียนหนองเรือวิทยา</h3>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100">
+                        <p class="text-xs text-gray-500">ผลการเรียนเฉลี่ย</p>
+                        <p class="text-xl font-bold text-emerald-600">GPAX: 3.95</p>
+                    </div>
+                </div>
+
+                <!-- Senior High School -->
+                <div class="cute-card p-5 text-center flex flex-col justify-between hover:-translate-y-1 transition duration-300 border-2 border-emerald-400">
+                    <div>
+                        <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-emerald-100 flex items-center justify-center text-2xl">
+                            🔬
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">มัธยมศึกษาตอนปลาย</span>
+                        <h3 class="text-lg font-bold text-gray-800 mt-2">โรงเรียนหนองเรือวิทยา</h3>
+                        <p class="text-xs text-gray-500 mt-1">วิทย์-คณิต</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100">
+                        <p class="text-xs text-gray-500">ผลการเรียนเฉลี่ย</p>
+                        <p class="text-xl font-bold text-emerald-600">GPAX: 3.95</p>
+                    </div>
+                </div>
+
+                <!-- Higher Education Target -->
+                <div class="cute-card p-5 text-center flex flex-col justify-between hover:-translate-y-1 transition duration-300 bg-gradient-to-b from-pink-50 to-white">
+                    <div>
+                        <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-pink-100 flex items-center justify-center text-2xl">
+                            🏥
+                        </div>
+                        <span class="text-xs font-bold text-pink-700 bg-pink-100 px-3 py-1 rounded-full">ระดับอุดมศึกษา</span>
+                        <h3 class="text-base font-bold text-gray-800 mt-2">วิทยาลัยการสาธารณสุขสิรินธร</h3>
+                        <p class="text-xs text-gray-500 mt-1">สาขาสาธารณสุข สถาบันพระบรมราชชนก</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100">
+                        <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md">กำลังศึกษาอยู่ / เป้าหมาย 🎯</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="scroll-mt-24">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 inline-block relative">
+                    ⭐ ความสามารถพิเศษ
+                    <span class="block h-2 bg-yellow-200 rounded-full mt-1"></span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="cute-card p-6 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-3xl">
+                        🗣️
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">ด้านภาษาและการสื่อสาร</h3>
+                    <p class="text-sm text-gray-600">สื่อสารจับใจความ ถ่ายทอดความคิดและอารมณ์ได้อย่างชัดเจนและเป็นกันเอง</p>
+                </div>
+
+                <div class="cute-card p-6 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center text-3xl">
+                        🤝
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">ด้านการเข้าสังคม</h3>
+                    <p class="text-sm text-gray-600">ปรับตัวเข้ากับผู้อื่นได้ดี มีมนุษยสัมพันธ์และพร้อมเรียนรู้สิ่งใหม่ร่วมกับผู้อื่น</p>
+                </div>
+
+                <div class="cute-card p-6 text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl">
+                        👑
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">ด้านภาวะผู้นำ</h3>
+                    <p class="text-sm text-gray-600">มีความรับผิดชอบ สามารถวางแผนและนำทีมทำกิจกรรมต่างๆ ได้สำเร็จเรียบร้อย</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="scroll-mt-24">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 inline-block relative">
+                    🏆 ประสบการณ์และกิจกรรม
+                    <span class="block h-2 bg-purple-200 rounded-full mt-1"></span>
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="cute-card p-6 flex flex-col md:flex-row items-start md:items-center gap-4 hover:border-emerald-300 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl flex-shrink-0">
+                        🎖️
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-gray-800">คณะกรรมการสภานักเรียน</h3>
+                        <p class="text-sm text-emerald-700">โรงเรียนหนองเรือวิทยา</p>
+                        <p class="text-xs text-gray-500 mt-1">ปฏิบัติหน้าที่ร่วมวางแผน วัยทำงานและจัดกิจกรรมส่งเสริมวินัยและคุณธรรมในโรงเรียน</p>
+                    </div>
+                </div>
+
+                <div class="cute-card p-6 flex flex-col md:flex-row items-start md:items-center gap-4 hover:border-pink-300 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl flex-shrink-0">
+                        🌟
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-gray-800">คณะบริหารสภาเด็กและเยาวชน</h3>
+                        <p class="text-sm text-pink-700">อำเภอหนองเรือ</p>
+                        <p class="text-xs text-gray-500 mt-1">มีส่วนร่วมในการขับเคลื่อนกิจกรรมพัฒนาศักยภาพเด็กและเยาวชนในระดับอำเภอ</p>
+                    </div>
+                </div>
+
+                <div class="cute-card p-6 flex flex-col md:flex-row items-start md:items-center gap-4 hover:border-amber-300 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl flex-shrink-0">
+                        🏡
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-gray-800">คณะบริหารสภาเด็กและเยาวชน</h3>
+                        <p class="text-sm text-amber-700">เทศบาลตำบลบ้านผือ</p>
+                        <p class="text-xs text-gray-500 mt-1">ร่วมมือกับชุมชนในการจัดโครงการเพื่อสังคมและการจิตอาสาพัฒนาท้องถิ่น</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="scroll-mt-24 pb-8">
+            <div class="cute-card p-8 bg-gradient-to-r from-emerald-50 via-white to-pink-50 border-2 border-emerald-200 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">📬 ช่องทางติดต่อ</h2>
+                <p class="text-sm text-gray-600 mb-6">สามารถติดต่อสอบถาม หรือพูดคุยเพิ่มเติมได้ตามข้อมูลด้านล่างนี้ค่ะ</p>
+
+                <div class="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                    <a href="tel:0945838433" class="p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition flex items-center justify-center gap-3 border border-gray-100">
+                        <i class="fa-solid fa-phone text-emerald-500 text-xl"></i>
                         <div class="text-left">
-                            <p class="text-xs font-cute text-pastel-textSecondary">เบอร์โทรศัพท์</p>
-                            <a href="tel:0945838433" class="font-bold font-cute text-pastel-textPrimary hover:text-pastel-deepPink">094-583-8433</a>
+                            <p class="text-xs text-gray-400">เบอร์โทรศัพท์</p>
+                            <p class="text-sm font-bold text-gray-800">094-583-8433</p>
                         </div>
-                    </div>
-                    <button onclick="copyToClipboard('0945838433', 'คัดลอกเบอร์โทรศัพท์เรียบร้อย!')" class="p-2 text-pastel-textSecondary hover:text-pastel-deepPink font-cute text-xs flex items-center gap-1 bg-white rounded-lg shadow-sm border border-pastel-pink/40">
-                        <i class="fa-regular fa-copy"></i>
-                    </button>
-                </div>
+                    </a>
 
-                <!-- Email Button -->
-                <div class="p-4 rounded-2xl bg-pastel-cream border border-pastel-pink flex items-center justify-between hover:scale-102 transition-transform">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-rose-100 text-pastel-deepPink flex items-center justify-center text-lg">
-                            <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:hello@reallygreatsite.com" class="p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition flex items-center justify-center gap-3 border border-gray-100">
+                        <i class="fa-solid fa-envelope text-pink-500 text-xl"></i>
+                        <div class="text-left">
+                            <p class="text-xs text-gray-400">อีเมล</p>
+                            <p class="text-sm font-bold text-gray-800">hello@reallygreatsite.com</p>
                         </div>
-                        <div class="text-left overflow-hidden">
-                            <p class="text-xs font-cute text-pastel-textSecondary">อีเมล</p>
-                            <a href="mailto:Siriyagorn094@gmail.com" class="font-bold font-cute text-pastel-textPrimary hover:text-pastel-deepPink text-xs md:text-sm truncate block">Siriyagorn094@gmail.com</a>
+                    </a>
+
+                    <div class="p-4 bg-white rounded-2xl shadow-sm flex items-center justify-center gap-3 border border-gray-100 col-span-1 md:col-span-1">
+                        <i class="fa-solid fa-location-dot text-amber-500 text-xl"></i>
+                        <div class="text-left">
+                            <p class="text-xs text-gray-400">ที่อยู่</p>
+                            <p class="text-xs font-bold text-gray-800">82/2 ม.10 ต.บ้านผือ อ.หนองเรือ จ.ขอนแก่น</p>
                         </div>
                     </div>
-                    <button onclick="copyToClipboard('Siriyagorn094@gmail.com', 'คัดลอกอีเมลเรียบร้อย!')" class="p-2 text-pastel-textSecondary hover:text-pastel-deepPink font-cute text-xs flex items-center gap-1 bg-white rounded-lg shadow-sm border border-pastel-pink/40">
-                        <i class="fa-regular fa-copy"></i>
-                    </button>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 right-6 bg-pastel-textPrimary text-white font-cute text-sm px-4 py-3 rounded-2xl shadow-lg flex items-center gap-2 z-50">
-        <i class="fa-solid fa-circle-check text-pastel-deepPink"></i>
-        <span id="toast-message">คัดลอกสำเร็จ!</span>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-pastel-pink/40 py-6 mt-12 text-center font-cute text-xs text-pastel-textSecondary">
-        <div class="max-w-4xl mx-auto px-4 space-y-2">
-            <p>💖 Designed with Love for Siriyagorn Nasa (Tennis)</p>
-            <p class="text-gray-400">© 2026 Siriyagorn Portfolio. All Rights Reserved.</p>
-        </div>
+    <footer class="bg-white/80 border-t border-pink-100 py-6 text-center text-sm text-gray-500">
+        <p>© 2026 Portfolio - นางสาว สิริยากร นะสา. All Rights Reserved.</p>
+        <p class="text-xs mt-1 text-emerald-600 font-medium">ขอบคุณค่ะ 🙏✨</p>
     </footer>
 
-    <script>
-        // Function to copy text to clipboard with fallback
-        function copyToClipboard(text, successMessage) {
-            // Using standard execCommand for compatibility in framed environments
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            textArea.style.position = "fixed";
-            textArea.style.left = "-999999px";
-            textArea.style.top = "-999999px";
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            
-            try {
-                document.execCommand('copy');
-                showToast(successMessage || "คัดลอกข้อมูลเรียบร้อยแล้ว!");
-            } catch (err) {
-                showToast("ไม่สามารถคัดลอกข้อมูลได้");
-            }
-            
-            document.body.removeChild(textArea);
-        }
-
-        // Toast notification system
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toast-message');
-            
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-    </script>
 </body>
 </html>
